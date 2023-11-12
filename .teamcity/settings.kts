@@ -60,7 +60,7 @@ object Build1 : BuildType({
 
 object Build2 : BuildType({
     name = "build2"
-    id("Build2customIDchanged")
+    id("Build2customIDchanged2")
     vcs {
         root(DslContext.settingsRoot)
     }
