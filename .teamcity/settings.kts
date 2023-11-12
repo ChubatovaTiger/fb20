@@ -29,7 +29,8 @@ version = "2023.05"
 project {
 
     buildType(Build1)
-     buildType(Build2)
+    
+buildType(Build3)
 }
 
 object Build1 : BuildType({
@@ -52,15 +53,15 @@ object Build1 : BuildType({
         }
     }
    dependencies {
-        snapshot(Build2) {
+        snapshot(Build3) {
             reuseBuilds = ReuseBuilds.NO
         }
     }
 })
 
-object Build2 : BuildType({
-    name = "build2"
-    id("Build2customIDchanged2")
+object Build3 : BuildType({
+    name = "build3"
+    id("Build3custom2")
     vcs {
         root(DslContext.settingsRoot)
     }
