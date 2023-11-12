@@ -29,11 +29,12 @@ version = "2023.05"
 project {
 
     buildType(Build1)
+     buildType(Build2)
 }
 
 object Build1 : BuildType({
     name = "build1"
-
+    
     vcs {
         root(DslContext.settingsRoot)
     }
@@ -50,4 +51,26 @@ object Build1 : BuildType({
             branchFilter = ""
         }
     }
+   dependencies {
+        snapshot(Build2) {
+            reuseBuilds = ReuseBuilds.NO
+        }
+    }
 })
+
+object Build2 : BuildType({
+    name = "build2"
+    id("Build2customID")
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        script {
+            id = "simpleRunner"
+            scriptContent = "ls"
+        }
+    }
+
+})
+
