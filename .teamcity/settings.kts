@@ -29,7 +29,7 @@ version = "2023.05"
 project {
 
     buildType(Build1)
-     buildType(Build2)
+    
 buildType(Build3)
 }
 
